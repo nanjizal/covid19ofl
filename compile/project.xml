@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="covid19ofl" package="net.nanjizal.covid19ofl" version="1.0.0" company="Nanjizal" />
+	<app main="covid19.Covid19ofl" path="../binOpenFL/Exports" file="covid19ofl" />
+	<source path="../src/" />
+	<haxelib name="openfl" />
+    <haxelib name="datetime" />
+    <haxelib name="pallette" />
+    <haxelib name="htmlHelper" />
+    <haxelib name="uk" />
+    <haxelib name="latLongUK" />
+    <window width="1024" height="768" background="0x181818" unless="mobile" />
+	<!--assets path="../binOpenFL/Assets" rename="assets" exclude="openfl.svg" /-->
+	<!--<icon path="../binLuxe/Assets/openfl.svg" /-->
+</project>
