@@ -37,7 +37,10 @@ import latLongUK.LatLongUK;
 import js.Browser;
 import js.html.CanvasElement;
 import covid19.manager.DataManager;
-
+import haxe.ui.Toolkit;
+import haxe.ui.components.Button;
+import haxe.ui.containers.VBox;
+import haxe.ui.core.Screen;
 
 class Covid19ofl extends Sprite{ 
     var g:                  Graphics;
@@ -81,6 +84,18 @@ class Covid19ofl extends Sprite{
         vectorUK();
         mapPlot = new UKcanvasPlot( surface );
         dataManager = new DataManager( finished );
+        Toolkit.init();
+        var main = new VBox();
+
+        var button1 = new Button();
+        button1.text = "Button 1";
+        main.addComponent(button1);
+
+        var button2 = new Button();
+        button2.text = "Button 2";
+        main.addComponent(button2);
+        this.addChild(main);
+        //Screen.instance.addComponent(main);
     }
     function canvasSetup(){
         var canvas = new CanvasWrapper();

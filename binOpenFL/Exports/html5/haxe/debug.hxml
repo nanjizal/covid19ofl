@@ -1,7 +1,4 @@
 -main ApplicationMain 
---macro openfl._internal.macros.ExtraParams.include()
--cp /usr/local/lib/haxeLibrary/openfl/8,9,6/src
--D openfl=8.9.6
 --macro lime._internal.macros.DefineMacro.run()
 -cp /usr/local/lib/haxeLibrary/lime/7,7,0/src
 -D lime=7.7.0
@@ -11,6 +8,17 @@
 -D pallette=0.0.1
 -cp /projects/May2019/myLibraries/htmlHelper/src
 -D htmlHelper=0.0.3-alpha
+-cp /usr/local/lib/haxeLibrary/haxeui-openfl/1,0,7
+-D haxeui-openfl=1.0.7
+-lib hscript
+-cp /usr/local/lib/haxeLibrary/haxeui-core/1,0,25
+-D haxeui-core=1.0.25
+--macro keep('IntIterator')
+-cp /usr/local/lib/haxeLibrary/hscript/2,3,0
+-D hscript=2.3.0
+--macro openfl._internal.macros.ExtraParams.include()
+-cp /usr/local/lib/haxeLibrary/openfl/8,9,6/src
+-D openfl=8.9.6
 -cp /usr/local/lib/haxeLibrary/uk/git/src
 -D uk=0.0.1-alpha
 -cp /usr/local/lib/haxeLibrary/latLongUK/git/src

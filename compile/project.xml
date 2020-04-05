@@ -8,6 +8,8 @@
     <haxelib name="datetime" />
     <haxelib name="pallette" />
     <haxelib name="htmlHelper" />
+    <haxelib name="haxeui-core" />
+    <haxelib name="haxeui-openfl" />
     <haxelib name="uk" />
     <haxelib name="latLongUK" />
     <window width="1024" height="768" background="0x181818" unless="mobile" />
