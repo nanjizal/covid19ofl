@@ -41,7 +41,8 @@ import haxe.ui.Toolkit;
 import haxe.ui.components.Button;
 import haxe.ui.containers.VBox;
 import haxe.ui.core.Screen;
-
+import haxe.ui.components.Calendar;
+import haxe.ui.components.DropDown;
 class Covid19ofl extends Sprite{ 
     var g:                  Graphics;
     var viewSprite:         Sprite;
@@ -87,6 +88,11 @@ class Covid19ofl extends Sprite{
         Toolkit.init();
         var main = new VBox();
 
+        var calendarDD = new DropDown();
+        calendarDD.text = "SelectDate";
+        calendarDD.type = "date";
+        main.addComponent(calendarDD);
+        
         var button1 = new Button();
         button1.text = "Button 1";
         main.addComponent(button1);
@@ -102,6 +108,8 @@ class Covid19ofl extends Sprite{
         canvas.width  = 1024;
         canvas.height = 768;
         Browser.document.body.appendChild( cast canvas );
+        var dom = cast canvas;
+        dom.style.setProperty("pointer-events","none");
         surface = new Surface({ x: 10, y: 10, me: canvas.getContext2d() });
     }
     var canvas2: CanvasWrapper;

@@ -894,9 +894,9 @@ ApplicationMain.create = function(config) {
 	ManifestResources.init(config);
 	var _this = app.meta;
 	if(__map_reserved["build"] != null) {
-		_this.setReserved("build","27");
+		_this.setReserved("build","28");
 	} else {
-		_this.h["build"] = "27";
+		_this.h["build"] = "28";
 	}
 	var _this1 = app.meta;
 	if(__map_reserved["company"] != null) {
@@ -4243,7 +4243,7 @@ var covid19_Covid19ofl = function() {
 	this.leftDown = false;
 	openfl_display_Sprite.call(this);
 	this.divertTrace = new htmlHelper_tools_DivertTrace();
-	haxe_Log.trace("test",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 63, className : "covid19.Covid19ofl", methodName : "new"});
+	haxe_Log.trace("test",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 64, className : "covid19.Covid19ofl", methodName : "new"});
 	var current = openfl_Lib.get_current();
 	var stage = current.stage;
 	this.viewSprite = new openfl_display_Sprite();
@@ -4269,6 +4269,10 @@ var covid19_Covid19ofl = function() {
 	this.dataManager = new covid19_manager_DataManager($bind(this,this.finished));
 	haxe_ui_Toolkit.init();
 	var main = new haxe_ui_containers_VBox();
+	var calendarDD = new haxe_ui_components_DropDown();
+	calendarDD.set_text("SelectDate");
+	calendarDD.set_type("date");
+	main.addComponent(calendarDD);
 	var button1 = new haxe_ui_components_Button();
 	button1.set_text("Button 1");
 	main.addComponent(button1);
@@ -4317,6 +4321,8 @@ covid19_Covid19ofl.prototype = $extend(openfl_display_Sprite.prototype,{
 		canvas1.width = 1024;
 		canvas1.height = 768;
 		window.document.body.appendChild(canvas1);
+		var dom1 = canvas1;
+		dom1.style.setProperty("pointer-events","none");
 		var this2 = new htmlHelper_canvas_CanvasPlus(canvas1.getContext("2d",null),10,10);
 		this.surface = this2;
 	}
@@ -4475,13 +4481,13 @@ covid19_Covid19ofl.prototype = $extend(openfl_display_Sprite.prototype,{
 		this16.me.fill();
 	}
 	,finished: function() {
-		haxe_Log.trace("Animating UK data",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 125, className : "covid19.Covid19ofl", methodName : "finished"});
+		haxe_Log.trace("Animating UK data",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 133, className : "covid19.Covid19ofl", methodName : "finished"});
 		var tot = this.dataManager.getMaxTotal();
-		haxe_Log.trace("tot " + tot,{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 127, className : "covid19.Covid19ofl", methodName : "finished"});
+		haxe_Log.trace("tot " + tot,{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 135, className : "covid19.Covid19ofl", methodName : "finished"});
 		this.scaleSize = 30 / tot;
 		this.mapPlot.sizeScale = this.scaleSize;
 		this.mapPlot.colorChange = 24 / tot;
-		haxe_Log.trace(this.dataManager.getUnfound(),{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 131, className : "covid19.Covid19ofl", methodName : "finished"});
+		haxe_Log.trace(this.dataManager.getUnfound(),{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 139, className : "covid19.Covid19ofl", methodName : "finished"});
 		if(htmlHelper_tools_AnimateTimer.s == null) {
 			htmlHelper_tools_AnimateTimer.s = window.document.createElement("style");
 			htmlHelper_tools_AnimateTimer.s.innerHTML = "@keyframes spin { from { transform:rotate( 0deg ); } to { transform:rotate( 360deg ); } }";
@@ -4538,9 +4544,9 @@ covid19_Covid19ofl.prototype = $extend(openfl_display_Sprite.prototype,{
 		}
 	}
 	,traceEndData: function() {
-		haxe_Log.trace("end data",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 179, className : "covid19.Covid19ofl", methodName : "traceEndData"});
+		haxe_Log.trace("end data",{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 187, className : "covid19.Covid19ofl", methodName : "traceEndData"});
 		this.divertTrace.traceString = "";
-		haxe_Log.trace("not plotted (" + this.dataManager.getUnfound() + ")<br>" + "sizeScale = " + Math.round(this.scaleSize / 2 * 1000) / 1000 + "pixel radius per person" + "<br>-locations plotted are centre of area health services<br>" + this.currentStr + this.lastStr,{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 181, className : "covid19.Covid19ofl", methodName : "traceEndData"});
+		haxe_Log.trace("not plotted (" + this.dataManager.getUnfound() + ")<br>" + "sizeScale = " + Math.round(this.scaleSize / 2 * 1000) / 1000 + "pixel radius per person" + "<br>-locations plotted are centre of area health services<br>" + this.currentStr + this.lastStr,{ fileName : "../src/covid19/Covid19ofl.hx", lineNumber : 189, className : "covid19.Covid19ofl", methodName : "traceEndData"});
 	}
 	,datePretty: function(date) {
 		var days = ((date - 62135596800.0 - datetime__$DateTime_DateTime_$Impl_$.yearStart(date)) / 86400 | 0) + 1;
@@ -61342,7 +61348,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 307236;
+	this.version = 429100;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
